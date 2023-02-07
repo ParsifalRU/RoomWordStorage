@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/listFragment2">
+
+    <fragment
+        android:id="@+id/listFragment2"
+        android:name="com.example.roomwordstorage.fragments.list.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment2_to_addFragment2"
+            app:destination="@id/addFragment2" />
+        <action
+            android:id="@+id/action_listFragment2_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment2"
+        android:name="com.example.roomwordstorage.fragments.add.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment2_to_listFragment2"
+            app:destination="@id/listFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.roomwordstorage.fragments.update.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update">
+        <action
+            android:id="@+id/action_updateFragment_to_listFragment2"
+            app:destination="@id/listFragment2" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.roomwordstorage.model.User" />
+    </fragment>
+</navigation>
