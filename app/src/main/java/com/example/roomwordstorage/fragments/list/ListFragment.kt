@@ -35,6 +35,7 @@ class ListFragment : Fragment() {
             adapter.setData(user)
         }
 
+
         view.findViewById<FloatingActionButton>(R.id.floatingActionButton).setOnClickListener{
             findNavController().navigate(R.id.action_listFragment2_to_addFragment2)
         }
@@ -67,6 +68,7 @@ class ListFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") { _, _ ->
             mUserViewModel.deleteAllUsers()
+            mUserViewModel.updateSQL()
             Toast.makeText(
                 requireContext(),
                 "Successfully removed everything",

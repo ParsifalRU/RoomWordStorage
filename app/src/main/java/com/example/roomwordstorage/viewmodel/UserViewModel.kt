@@ -44,4 +44,10 @@ class UserViewModel(application: Application): AndroidViewModel(application){
             repository.deleteAllUsers()
         }
     }
+
+    fun updateSQL(){
+        viewModelScope.launch(Dispatchers.IO){
+            repository.updateSQL()
+        }
+    }
 }

@@ -23,4 +23,7 @@ interface UserDao {
     @Query("DELETE FROM user_table")
     suspend fun deleteAll()
 
+    @Query("UPDATE sqlite_sequence SET seq = 0")
+    suspend fun updateSQL()
+
 }
